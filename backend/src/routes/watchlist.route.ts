@@ -1,16 +1,16 @@
 import { Router } from "express";
-import { getValidToken } from "../auth/tokenManager";
+import { getWatchList } from "../services/watchlist.service";
 
 const router = Router();
 
-router.get("/token", async (req, res) => {
+router.get("/watchlist", async (req, res) => {
   try {
 
-    const accessToken = await getValidToken();
+    const data = await getWatchList();
 
     res.json({
       success: true,
-      access_token: accessToken
+      data
     });
 
   } catch (err: any) {

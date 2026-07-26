@@ -1,11 +1,17 @@
 import express from "express";
 import tokenRouter from "./routes/token.route";
+import priceRouter from "./routes/price.route";
+import watchlistRouter from "./routes/watchlist.route";
+
+
 
 const app = express();
 
 app.use(express.json());
 
 app.use("/api", tokenRouter);
+app.use("/api", priceRouter);
+app.use("/api", watchlistRouter);
 
 app.get("/health", (req, res) => {
   res.json({
