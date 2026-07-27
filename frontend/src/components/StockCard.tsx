@@ -1,28 +1,44 @@
 import type { StockItem } from "../types/stock";
 
-
 interface Props {
   stock: StockItem;
+  selected: boolean;
+  onClick: () => void;
 }
 
-export default function StockCard({ stock }: Props) {
+export default function StockCard({
+  stock,
+  selected,
+  onClick,
+}: Props) {
   const up = stock.rate >= 0;
 
   return (
-    <div className="rounded-xl bg-white shadow hover:shadow-lg transition p-5">
-
-      <div className="flex justify-between items-center">
+    <div
+      onClick={onClick}
+      className={`
+        cursor-pointer
+        rounded-xl
+        p-5
+        transition
+        shadow
+        ${
+          selected
+            ? "bg-blue-50 border-2 border-blue-500"
+            : "bg-white hover:shadow-lg"
+        }
+      `}
+    >
+      <div className="flex justify-between">
 
         <div>
-
           <div className="text-xl font-bold">
             {stock.name}
           </div>
 
-          <div className="text-gray-400 text-sm">
+          <div className="text-sm text-gray-400">
             {stock.code}
           </div>
-
         </div>
 
         <div className="text-right">
