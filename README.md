@@ -16,3 +16,7 @@ npm run dev
 cd /workspaces/kospi-view/frontend
 npm install
 npm run dev -- --host
+
+3000 행에서 우클릭
+Port Visibility
+Public 선택
