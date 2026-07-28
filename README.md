@@ -7,6 +7,10 @@ git add .
 git commit -m "..."
 git push
 
+git add .
+git commit -m "feat: 구현한 기능"
+git push origin main
+
 
 
 cd /workspaces/kospi-view/backend
