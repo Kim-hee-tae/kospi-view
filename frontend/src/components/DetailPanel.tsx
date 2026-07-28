@@ -1,3 +1,4 @@
+import StockChart from "./StockChart";
 import type { StockItem } from "../types/stock";
 import { useEffect, useState } from "react";
 import { fetchStockDetail, type StockDetail } from "../api/stock";
@@ -52,8 +53,12 @@ console.log("detail =", detail);
         {stock.code}
       </p>
 
-      <div className="mt-6 h-80 rounded-xl border-2 border-dashed border-gray-300 flex items-center justify-center text-gray-400">
-        Chart Area
+      <div className="mt-6">
+
+          <StockChart
+              code={stock.code}
+          />
+
       </div>
 
       <div className="grid grid-cols-2 gap-4 mt-6">
